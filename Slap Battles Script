@@ -1,0 +1,113 @@
+                repeat wait() until game:IsLoaded() wait()
+                spawn(function()
+                game:GetService("Players").LocalPlayer.Idled:connect(function()
+                game:GetService("VirtualUser"):ClickButton2(Vector2.new())
+                end)
+                end)
+
+if game.PlaceId == 9431156611 then
+local bypass;
+    bypass = hookmetamethod(game, "__namecall", function(method, ...) 
+        if getnamecallmethod() == "FireServer" and method == game.ReplicatedStorage.Events.Ban then
+            return
+        elseif getnamecallmethod() == "FireServer" and method == game.ReplicatedStorage.Events.AdminGUI then
+            return
+        elseif getnamecallmethod() == "FireServer" and method == game.ReplicatedStorage.Events.WS then
+            return
+        elseif getnamecallmethod() == "FireServer" and method == game.ReplicatedStorage.Events.WS2 then
+            return
+        end
+        return bypass(method, ...)
+    end)
+
+local AntiLava = Instance.new("Part", workspace)
+AntiLava.Name = "AntiLava"
+AntiLava.Position = Vector3.new(-238, -43, 401)
+AntiLava.Size = Vector3.new(150,30,150)
+AntiLava.Anchored = true
+AntiLava.Transparency = 1
+AntiLava.CanCollide = false
+
+local AntiAcid = Instance.new("Part", workspace)
+AntiAcid.Position = Vector3.new(-70, -20, -725)
+AntiAcid.Name = "AntiAcid"
+AntiAcid.Size = Vector3.new(155, 35, 144)
+AntiAcid.Anchored = true
+AntiAcid.Transparency = 1
+AntiLava.CanCollide = false
+
+local Items = {"Potion of Strength", "Bull's essence", "Speed Potion", "Boba", "Frog Potion", "Strength Brew", "Frog Brew", "Speed Brew"}
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))()
+                
+                local Window = OrionLib:MakeWindow({Name = "Slap Royale hub that exists", HidePremium = true,IntroEnabled = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+                local Tab = Window:MakeTab({
+                    Name = "Home",
+                    Icon = "http://www.roblox.com/asset/?id=",
+                    PremiumOnly = false
+                })
+
+                local Tab2 = Window:MakeTab({
+                    Name = "Ability Spams",
+                    Icon = "http://www.roblox.com/asset/?id=",
+                    PremiumOnly = false
+                })
+
+                local Tab3 = Window:MakeTab({
+                    Name = "Antis",
+                    Icon = "http://www.roblox.com/asset/?id=",
+                    PremiumOnly = false
+                })
+ 
+                local Tab4 = Window:MakeTab({
+                    Name = "Misc",
+                    Icon = "http://www.roblox.com/asset/?id=",
+                    PremiumOnly = false
+                })
+
+                local Tab5 = Window:MakeTab({
+                    Name = "Badges",
+                    Icon = "http://www.roblox.com/asset/?id=",
+                    PremiumOnly = false
+                })
+
+                local Tab6 = Window:MakeTab({
+                    Name = "Player",
+                    Icon = "http://www.roblox.com/asset/?id=",
+                    PremiumOnly = false
+                })
+
+                local Tab8 = Window:MakeTab({
+                    Name = "Hubs",
+                    Icon = "http://www.roblox.com/asset/?id=",
+                    PremiumOnly = false
+                })
+
+Tab:AddLabel("If you have problems then message Guy that exists#1915")
+
+Tab:AddButton({
+	Name = "Destroy GUI",
+	Callback = function()
+      		OrionLib:Destroy()
+  	end    
+})
+
+Tab:AddButton({
+                    Name = "Fake Nametag",
+                    Default = false,
+                    Callback = function(bool)
+Auto_Change = bool
+        if bool == true then
+        game.Players.LocalPlayer.Character:FindFirstChild("Head").Nametag.TextLabel.Text = "skill issue"
+            task.wait()
+            game.Players.LocalPlayer.CharacterAdded:Connect(function()
+                if Auto_Change == true then
+                repeat task.wait()
+                until game.Players.LocalPlayer.Character:FindFirstChild("Head")
+                game.Players.LocalPlayer.Character:FindFirstChild("Head").Nametag.TextLabel.Text = "skill issue"
+                end
+            end)
+        end
+end
+                })
